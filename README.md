@@ -1,21 +1,21 @@
 # Docker-cheatsheet
-## Build a Docker image
+#### Build a Docker image
 $ docker build -t [image_name]:[tag] .
-## Run a Docker container specifying a name
+#### Run a Docker container specifying a name
 $ docker run --name [container_name] [image_name]:[tag]
-## Fetch the logs of a container
+#### Fetch the logs of a container
 $ docker logs -f [container_id_or_name]
-## Run a command in a running container
+#### Run a command in a running container
 $ docker exec -it [container_id_or_name] bash
-## Show running containers
+#### Show running containers
 $ docker ps
-## Show all containers
+#### Show all containers
 $ docker ps -a
-## Show Docker images
+#### Show Docker images
 $ docker images
-## Stop a Docker container
+#### Stop a Docker container
 $ docker stop [container_id_or_name]
-## Remove a Docker container
+#### Remove a Docker container
 $ docker rm [container_id_or_name]
-## Remove a Docker image
+#### Remove a Docker image
 $ docker rmi [image_id_or_name]
