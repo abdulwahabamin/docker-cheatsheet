@@ -19,3 +19,6 @@ $ docker stop [container_id_or_name]
 $ docker rm [container_id_or_name]
 #### Remove a Docker image
 $ docker rmi [image_id_or_name]
+#### Docker tensorflow run
+Need nvidia-docker installed to run gpu on containers
+$ docker run --runtime=nvidia -it --rm tensorflow/tensorflow:devel-gpu-py3 bash
