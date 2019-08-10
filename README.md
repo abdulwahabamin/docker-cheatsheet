@@ -21,6 +21,5 @@ $ docker rm [container_id_or_name]
 $ docker rmi [image_id_or_name]
 #### Docker tensorflow run
 Need nvidia-docker installed to run gpu on containers <br/>
-Nvidia-docker: https://github.com/NVIDIA/nvidia-docker <br/>
-Nvidia-runtime: https://github.com/nvidia/nvidia-container-runtime#docker-engine-setup <br/>
+Nvidia-docker: https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-2.0) <br/>
 $ docker run --runtime=nvidia -it --rm tensorflow/tensorflow:devel-gpu-py3 bash <br/>
