@@ -19,6 +19,9 @@ $ docker stop [container_id_or_name]
 $ docker rm [container_id_or_name]
 #### Remove a Docker image
 $ docker rmi [image_id_or_name]
+#### Docker jupyter notebook
+$ docker run -it --rm -p 8080:8080 image </br>
+$ jupyter notebook --ip 0.0.0.0 --no-browser --allow-root </br>
 #### Docker tensorflow run
 Need nvidia-docker installed to run gpu on containers <br/>
 Nvidia-docker: https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-2.0) <br/>
