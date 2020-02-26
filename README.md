@@ -30,3 +30,18 @@ Nvidia-docker: https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(versio
 $ docker run --runtime=nvidia -it --rm tensorflow/tensorflow:devel-gpu-py3 bash <br/>
 #### Docker cv2 window command
 $ xhost + && docker run --rm -ti --net=host --ipc=host -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/dri:/dev/dri -v volume/to/mount docker-image:tag
+#### Docker volume mount to local host
+Create a volume from terminal
+$ docker volume create --driver local \
+      --opt type=none \
+      --opt device=/home/user/test \
+      --opt o=bind \
+      test_vol
+Create a volume in docker-compose file
+volumes:
+    bind-test:
+      driver: local
+      driver_opts:
+        type: none
+        o: bind
+        device: /home/user/test
