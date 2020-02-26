@@ -28,20 +28,17 @@ $ docker file/location/in/base/os container-id:/file-location </br>
 Need nvidia-docker installed to run gpu on containers <br/>
 Nvidia-docker: https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-2.0) <br/>
 $ docker run --runtime=nvidia -it --rm tensorflow/tensorflow:devel-gpu-py3 bash <br/>
-#### Docker cv2 window command
+#### Docker cv2 window (accessing windows on host)
 $ xhost + && docker run --rm -ti --net=host --ipc=host -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/dri:/dev/dri -v volume/to/mount docker-image:tag
 #### Docker volume mount to local host
-Create a volume from terminal
-$ docker volume create --driver local \
-      --opt type=none \
-      --opt device=/home/user/test \
-      --opt o=bind \
-      test_vol
-Create a volume in docker-compose file
+Create a volume from terminal <br/>
+$ docker volume create --driver local --opt type=none --opt device=/home/user/test --opt o=bind test_vol <br/> 
+Create a volume in docker-compose file </br>
 volumes:
-    bind-test:
-      driver: local
-      driver_opts:
-        type: none
-        o: bind
-        device: /home/user/test
+    bind-test: \
+      driver: local \
+      driver_opts: \
+        type: none \
+        o: bind \
+        device: /home/user/test \
+NOTE: In docker compose, volume doesn't create a local directory on the host. You have to make sure that the directory exists otherwise the mount will fail
