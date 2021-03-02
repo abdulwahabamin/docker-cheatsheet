@@ -26,7 +26,7 @@ $ jupyter notebook --ip 0.0.0.0 --no-browser --allow-root </br>
 $ docker file/location/in/base/os container-id:/file-location </br>
 #### Docker tensorflow run
 Need nvidia-docker installed to run gpu on containers <br/>
-Nvidia-docker: https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-2.0) <br/>
+Nvidia-docker: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker <br/>
 $ docker run --runtime=nvidia -it --rm tensorflow/tensorflow:devel-gpu-py3 bash <br/>
 #### Docker cv2 window (accessing windows on host)
 $ xhost + && docker run --rm -ti --net=host --ipc=host -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/dri:/dev/dri -v volume/to/mount docker-image:tag
